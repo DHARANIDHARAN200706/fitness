@@ -17,11 +17,11 @@ const userSchema = new mongoose.Schema({
   },
   recommendations: [
     {
-      title: String,
-      type: String,
-      duration: String,
-      level: String,
-      image: String
+      title: { type: String },
+      type: { type: String },
+      duration: { type: String },
+      level: { type: String },
+      image: { type: String }
     }
   ]
 }, { timestamps: true });
