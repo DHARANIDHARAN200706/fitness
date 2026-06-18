@@ -4,7 +4,7 @@ import { Search, UserPlus, UserCheck, MessageCircle, ArrowLeft } from 'lucide-re
 import UserAvatar from '../components/UserAvatar';
 import { io } from 'socket.io-client';
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 export default function SearchPage() {
   const [users, setUsers] = useState([]);

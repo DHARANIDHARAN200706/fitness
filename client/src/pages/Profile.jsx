@@ -4,7 +4,7 @@ import { ArrowLeft, MessageCircle, Image as ImageIcon, Edit3, X, Check } from 'l
 import Avatar, { genConfig } from 'react-nice-avatar';
 import UserAvatar from '../components/UserAvatar';
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 export default function Profile() {
   const [currentUser, setCurrentUser] = useState(null);

@@ -4,7 +4,7 @@ import { ArrowLeft, Send, Video, Phone } from 'lucide-react';
 import UserAvatar from '../components/UserAvatar';
 import { io } from 'socket.io-client';
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 export default function PrivateChat() {
   const { userId: recipientId } = useParams();

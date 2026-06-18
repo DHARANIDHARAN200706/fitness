@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Search, Heart, MessageCircle, Share2, Award } from 'lucide-react';
 import UserAvatar from '../components/UserAvatar';
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 export default function Network() {
   const [users, setUsers] = useState([]);

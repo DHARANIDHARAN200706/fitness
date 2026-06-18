@@ -4,9 +4,7 @@ import { Send, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import UserAvatar from '../components/UserAvatar';
 
-const BACKEND_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' 
-  ? 'http://localhost:5000' 
-  : `http://${window.location.hostname}:5000`;
+const BACKEND_URL = 'https://fitness-1ro9.onrender.com';
 const socket = io(BACKEND_URL);
 
 const CommunityChat = () => {
@@ -20,7 +18,7 @@ const CommunityChat = () => {
   useEffect(() => {
     // Fetch current user details
     const token = localStorage.getItem('token') || '';
-    fetch(`http://localhost:5000/api/dashboard`, {
+    fetch(`https://fitness-1ro9.onrender.com/api/dashboard`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

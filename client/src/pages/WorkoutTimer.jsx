@@ -21,7 +21,7 @@ const MapUpdater = ({ center }) => {
   return null;
 };
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 const WorkoutTimer = () => {
   const navigate = useNavigate();

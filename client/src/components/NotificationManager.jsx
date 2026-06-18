@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import { useLocation, useNavigate } from 'react-router-dom';
 import UserAvatar from './UserAvatar';
 
-const BACKEND_URL = `http://${window.location.hostname}:5000`;
+const BACKEND_URL = `https://fitness-1ro9.onrender.com`;
 
 export default function NotificationManager() {
   const [notification, setNotification] = useState(null);

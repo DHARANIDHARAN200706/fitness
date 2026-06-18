@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token') || '';
-    fetch(`http://localhost:5000/api/dashboard`, {
+    fetch(`https://fitness-1ro9.onrender.com/api/dashboard`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -67,7 +67,7 @@ const Dashboard = () => {
       });
 
     // Fetch Notifications
-    fetch(`http://localhost:5000/api/notifications`, {
+    fetch(`https://fitness-1ro9.onrender.com/api/notifications`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -77,7 +77,7 @@ const Dashboard = () => {
       .catch(console.error);
 
     // Fetch leaderboard
-    fetch(`http://${window.location.hostname}:5000/api/users`, {
+    fetch(`https://fitness-1ro9.onrender.com/api/users`, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
       .then(res => res.ok ? res.json() : [])
@@ -89,7 +89,7 @@ const Dashboard = () => {
       })
       .catch(console.error);
 
-    const socket = io(`http://${window.location.hostname}:5000`);
+    const socket = io(`https://fitness-1ro9.onrender.com`);
     socket.on('receiveFollowNotification', (notif) => {
       const userStr = localStorage.getItem('user');
       if (userStr) {
