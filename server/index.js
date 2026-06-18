@@ -6,6 +6,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const jwt = require('jsonwebtoken');
 const User = require('./models/User');
+const compression = require('compression');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'risefit_super_secret_key';
 
@@ -21,6 +22,7 @@ const io = new Server(server, {
 app.use(cors());
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
+app.use(compression());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/risefit')
@@ -182,9 +184,9 @@ app.get('/api/dashboard', async (req, res) => {
     
     let user;
     if (userId && !userId.startsWith('mock_id_')) {
-      user = await User.findById(userId);
+      user = await User.findById(userId).lean();
     } else {
-      user = await User.findOne();
+      user = await User.findOne().lean();
     }
 
     if (!user) {
